@@ -6,8 +6,8 @@ Api project - task from Royal class
 ## Installation
 1. **Clone the repository:**
    ```bash
-   git clone <[repository-url](https://github.com/MotasimEmad/royalclass-task.git)>
-   cd project-directory
+   git clone https://github.com/MotasimEmad/royalclass-task.git
+   cd to project
 
 composer install
 npm install # if using npm for frontend dependencies
