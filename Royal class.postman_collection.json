@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "00cdd8c3-c64f-4c53-b0ef-c8631dfbbf39",
+		"name": "Royal class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13997763",
+		"_collection_link": "https://lunar-zodiac-69766.postman.co/workspace/Ad's~a25040f6-77ce-41e0-b6a3-946040a2c9fb/collection/13997763-00cdd8c3-c64f-4c53-b0ef-c8631dfbbf39?action=share&source=collection_link&creator=13997763"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "user_sign_up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_name",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "johndoe@royalclass.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user_sign_up",
+							"host": [
+								"{{url}}user_sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "johndoe@royalclass.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}login",
+							"host": [
+								"{{url}}login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "post test",
+									"type": "text"
+								},
+								{
+									"key": "post_content",
+									"value": "post badword1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}posts",
+							"host": [
+								"{{url}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "edit badword3",
+									"type": "text"
+								},
+								{
+									"key": "post_content",
+									"value": "so what",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}update_post/273fe206-485d-437a-bdc9-3fb1faec3b35",
+							"host": [
+								"{{url}}update_post"
+							],
+							"path": [
+								"273fe206-485d-437a-bdc9-3fb1faec3b35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}posts",
+							"host": [
+								"{{url}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}posts/5b5759e4-e13b-40cd-99f1-224367691b3a",
+							"host": [
+								"{{url}}posts"
+							],
+							"path": [
+								"5b5759e4-e13b-40cd-99f1-224367691b3a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_posts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "report_content_review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "report_content",
+							"value": "bad words",
+							"type": "text"
+						},
+						{
+							"key": "post_id",
+							"value": "273fe206-485d-437a-bdc9-3fb1faec3b35",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}report_content_review",
+					"host": [
+						"{{url}}report_content_review"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
