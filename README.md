@@ -6,7 +6,8 @@ Task from Royal class company
 composer install
 npm install
 
-create database royal-class then run php artisan migrate
+create database royal-class then run php artisan migrate & php artisan passport:install
+
 
 ## User Registration
 ### Endpoint
