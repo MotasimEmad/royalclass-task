@@ -1,44 +1,101 @@
-# royalclass-task
-
 ## Overview
-Api project - task from Royal class
+Task from Royal class company
 
 ## Installation
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/MotasimEmad/royalclass-task.git
-   cd to project
-
+```bash
 composer install
-npm install # if using npm for frontend dependencies
+npm install
 
 php artisan migrate
 
-User Registration:
+## User Registration
+### Endpoint
+- **Method:** `POST`
+- **URL:** `/user_sign_up`
+### Parameters
+- `user_name` (string): User's name.
+- `email` (string): User's email address.
+- `password` (string): User's password.
+- `role` (string): User's role (`admin` or `user`).
+### Description
+Registers a new user with the specified role.
 
-Endpoint: POST /sign_up_user
-Parameters: user_name, email, password, role (admin or user)
-User Login:
+---
 
-Endpoint: POST /login
-Parameters: email, password
-Features: Implements throttling and single device login.
-Admin Features:
+## User Login
+### Endpoint
+- **Method:** `POST`
+- **URL:** `/login`
+### Parameters
+- `email` (string): User's email address.
+- `password` (string): User's password.
+### Features
+Implements throttling and single device login.
 
-Manage accounts and content.
-Access all posts using GET /all_posts (admin role only).
-Filter Bad Words:
+---
 
-Bad words array: ['badword1', 'badword2', 'badword3']
-Error returned if title or content contains bad words.
-Report Bad Content:
+## Admin Features
+### Manage Accounts and Content
+- **Description:** Allows admins to manage user accounts and content.
+### Access All Posts
+- **Method:** `GET`
+- **URL:** `/all_posts`
+- **Authorization:** Admin role required.
+### Description
+Allows admins to access all posts in the system.
 
-Endpoint: POST /report_content_review
-Parameters: report_content, post_id
-Posts:
+## Report Bad Content
+### Endpoint
+- **Method:** `POST`
+- **URL:** `/report_content_review`
+### Parameters
+- `report_content` (string): Description of the reported content.
+- `post_id` (integer): ID of the post being reported.
+### Description
+Allows users to report content that violates community guidelines.
 
-Create post: POST /create_post
-Update post: PUT /post_update/{post_id}
-Features: Users can only update or delete their own posts.
-Postman Collection
+---
+
+---
+
+## Filter Bad Words
+### Bad Words Array
+- `['badword1', 'badword2', 'badword3']`
+### Description
+Filters out posts containing any of the specified bad words in titles or content.
+
+---
+
+## Posts
+### Create Post
+- **Method:** `POST`
+- **URL:** `/posts`
+### Description
+Allows users to create new posts.
+
+### Update Post
+- **Method:** `PUT`
+- **URL:** `/post_update/{post_id}`
+### Parameters
+- `post_id` (uuid): ID of the post to update.
+### Features
+Users can only update or delete their own posts.
+
+### View Posts
+- **Method:** `GET`
+- **URL:** `/posts`
+### Description
+Allows users to view all posts.
+
+### Delete Post
+- **Method:** `DELETE`
+- **URL:** `/posts/{post_id}`
+### Parameters
+- `post_id` (uuid): ID of the post to delete.
+### Features
+Users can only delete their own posts.
+
+---
+
+## Postman Collection
 Import the provided Postman collection for testing the API endpoints.
