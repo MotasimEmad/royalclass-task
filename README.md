@@ -75,8 +75,8 @@ Filters out posts containing any of the specified bad words in titles or content
 Allows users to create new posts.
 
 ### Update Post
-- **Method:** `PUT`
-- **URL:** `/post_update/{post_id}`
+- **Method:** `POST`
+- **URL:** `/update_post/{post_id}`
 ### Parameters
 - `post_id` (uuid): ID of the post to update.
 ### Features
