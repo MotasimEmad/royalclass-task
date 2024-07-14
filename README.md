@@ -51,7 +51,7 @@ Allows admins to access all posts in the system.
 - **URL:** `/report_content_review`
 ### Parameters
 - `report_content` (string): Description of the reported content.
-- `post_id` (integer): ID of the post being reported.
+- `post_id` (uuid): ID of the post being reported.
 ### Description
 Allows users to report content that violates community guidelines.
 
